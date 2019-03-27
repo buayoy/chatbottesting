@@ -7,8 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Keyboard,WebView, ActivityIndicator,KeyboardAvoidingView,TextInput,StyleSheet,View,Dimensions} from 'react-native';
-// import { WebView } from "react-native-webview";
+import {Keyboard, ActivityIndicator,KeyboardAvoidingView,TextInput,StyleSheet,View,Dimensions} from 'react-native';
+import { WebView } from "react-native-webview";
 
 export default class ChatbotScreen extends Component {
     static navigationOptions = {
@@ -32,12 +32,17 @@ export default class ChatbotScreen extends Component {
         return (
             this.state.loading ?
                 <ActivityIndicator size='large' color="#006600" /> :
+    //              <KeyboardAvoidingView
+    //   style={styles.container}
+    //   behavior="padding" enabled
+    //   >
                 <WebView
                     // scrollEnabled={false}
                     source={{uri: 'https://icn1-dev.convolab.ai/site/chat.page?appId=icndev'}}
                     // style={{marginTop: 0}}
                     useWebkit={true}
                 />
+                //  </KeyboardAvoidingView>
         );
     }
 }
